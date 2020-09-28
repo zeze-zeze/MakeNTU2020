@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
-import json
-import time
+from IOT import *
 
 #
 # constant value
@@ -9,6 +8,11 @@ APP = Flask(__name__)
 DEFAULT_WAITING_TIME_WHOLE = 20
 DEFAULT_WAITING_TIME_DISH = 10
 CONSUMER_DISPLAY = 4
+try:
+    iot = IOT()
+except:
+    print('no iot')
+    pass
 
 #
 # table: information of all tables in the restaurant
@@ -52,6 +56,12 @@ def frompie():
         table[id_]['dish'] = int(args.get('dish'))
         table[id_]['time_left'] = int(args.get('time_left'))
         table[id_]['order'] = int(args.get('order'))
+        
+        try:
+            iot.send(id_, table[id_]['finished'])
+        except:
+            pass
+
     return 'from pie ok'
 
 @APP.route('/queue')
