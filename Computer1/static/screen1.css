@@ -1,0 +1,49 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    overflow: hidden    
+}
+
+.top {
+    height: 80px;
+    width: 100%;
+    z-index: 10;
+    position: absolute;
+}
+
+.title {
+    padding: 50px;
+    font-size: 40pt;
+}
+
+#hamburger {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.back {
+    background-color: black;
+    opacity: 0.8;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+
+#waiting {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    top: 15vh;
+    font-size: 40pt;
+}
+
+#waiting li {
+    margin-top: 50pt;
+}

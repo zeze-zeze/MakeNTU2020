@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Nexus Restaurant</title>
+    <meta http-equiv="refresh" content="1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/screen1.css">
+</head>
+<body>
+    <img id="hamburger" src="/static/food.png" />
+    <div class="back"></div>
+    <div class="top">
+        <h1 class="title is-3 has-text-white">
+            歡迎光臨 <b>Nexus Restaurant</b>
+        </h1>
+    </div>
+    <ul id="waiting" class="is-3 has-text-white">
+        {% for wq in waiting_queue %}
+        <li>號碼 {{wq['id']}} 號，預估等待時間 {{wq['wait']}} 分鐘</li>
+        {% endfor %}
+    </ul>
+</body>
