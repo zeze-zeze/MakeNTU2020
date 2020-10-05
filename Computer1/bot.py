@@ -43,19 +43,17 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    #try:
-    res = int(event.message.text)
-    for wq in waiting_queue:
-        print(res)
-        print(wq['id'])
-        print(res == wq['id'])
-        if res == wq['id']:
-            reply = 'Waiting Time: about {} minutes '.format(wq['wait'])
-        else:
-            reply = 'No such number !'
+    try:
+        res = int(event.message.text)
+        for wq in waiting_queue:
+            if res == wq['id']:
+                reply = 'Waiting Time: about {} minutes '.format(wq['wait'])
+                break
+            else:
+                reply = 'No such number !'
 
-    #except:
-    #    reply = 'Usage: Input the number, and you will get the time to wait'
+    except:
+        reply = 'Usage: Input the number, and you will get the time to wait'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=reply))
