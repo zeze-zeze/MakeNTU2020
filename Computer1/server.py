@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, abort
 from IOT import *
 
-
 #
 # constant value
 #
