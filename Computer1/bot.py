@@ -35,6 +35,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    global waiting_queue
     try:
         res = int(event.message.text)
         for wq in waiting_queue:
