@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>Nexus Restaurant</title>
+    -<meta http-equiv="refresh" content="1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/static/screen1.css">
+</head>
+<body>
+    <img id="hamburger" src="/static/food.png" />
+    <div class="back"></div>
+    <div class="top">
+        <h1 class="title is-3 has-text-white">
+            <b>Nexus Restaurant</b> 用餐進度
+        </h1>
+    </div>
+    <div id="waiting">
+        {% for t in table %}
+        <li class="w3-progress-container">
+          <div style="color: white;">桌號 {{t['id'] + 1}}</div>
+          <div class="w3-progressbar w3-green" style="width:{{t['finished']}}%">
+            <div class="w3-center w3-text-white">{{t['finished']}}%</div>
+          </div>
+        </li><br>
+        {% endfor %}
+    </div>
+</body>

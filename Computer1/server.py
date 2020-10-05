@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, abort
 from IOT import *
+
 
 #
 # constant value
@@ -14,6 +15,8 @@ except:
     print('no iot')
     pass
 
+from bot import *
+
 #
 # table: information of all tables in the restaurant
 #       id: the id of table
@@ -23,7 +26,7 @@ except:
 #       status: whether the table is empty, 0 = empty, 1 = occupy
 #       order: how many dishes ordered
 #
-table = [{'id': 0, 'finished': 0, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}, {'id': 1, 'finished': 0, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}]
+table = [{'id': 0, 'finished': 70, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}, {'id': 1, 'finished': 40, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}]
 
 waiting_queue = [{'id': 1, 'wait': 0}, {'id': 2, 'wait': 0}, {'id': 3, 'wait': 1}, {'id': 4, 'wait': 0}, {'id': 5, 'wait': 0}]
 
@@ -44,6 +47,10 @@ def screen1():
         wq['wait'] = tl
      
     return render_template('screen1.html', waiting_queue = waiting_queue[:min(len(waiting_queue), CONSUMER_DISPLAY)])
+
+@APP.route('/screen2')
+def screen2():
+    return render_template('screen2.html', table = table)  
 
 @APP.route('/frompie')
 def frompie():

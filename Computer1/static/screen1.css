@@ -46,4 +46,5 @@ body {
 
 #waiting li {
     margin-top: 50pt;
+    list-style: none;
 }
