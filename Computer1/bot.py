@@ -37,8 +37,8 @@ def callback():
 def handle_message(event):
     try:
         res = int(event.message.text)
-        print(res)
         for wq in waiting_queue:
+            print('hahaha\n\n')
             if res == wq['id']:
                 reply = 'Waiting Time: about {} minutes '.format(wq['wait'])
             else:
