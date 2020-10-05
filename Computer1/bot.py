@@ -16,7 +16,10 @@ handler = WebhookHandler('fb0fa7acf8e727f01331ceafaca370e0')
 
 @APP.route("/test", methods=['GET'])
 def test():
-    return str(waiting_queue)
+    reply = ''
+    for wq in waiting_queue:
+        reply += str(wq)
+    return reply
 
 @APP.route("/callback", methods=['POST'])
 def callback():
