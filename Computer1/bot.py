@@ -42,7 +42,7 @@ def handle_message(event):
         res = int(event.message.text)
         for wq in waiting_queue:
             print(res)
-            print(wp['id'])
+            print(wq['id'])
             if res == wq['id']:
                 reply = 'Waiting Time: about {} minutes '.format(wq['wait'])
             else:
