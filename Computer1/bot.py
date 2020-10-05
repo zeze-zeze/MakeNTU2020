@@ -36,9 +36,10 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     try:
-        req = int(event.message.text)
+        res = int(event.message.text)
+        print(res)
         for wq in waiting_queue:
-            if req == wq['id']:
+            if res == wq['id']:
                 reply = 'Waiting Time: about {} minutes '.format(wq['wait'])
             else:
                 reply = 'No such number !'
