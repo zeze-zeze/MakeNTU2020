@@ -38,12 +38,12 @@ def handle_message(event):
         req = int(event.message.text)
         for wq in waiting_queue:
             if req == wq['id']:
-                reply = '等候時間大約 {} 分鐘'.format(wq['wait'])
+                reply = 'Waiting Time: about {} minutes '.format(wq['wait'])
             else:
-                reply = '無此等候號碼'
+                reply = 'No such number !'
 
     except:
-        reply = '使用說明：輸入號碼牌號碼，可得知等候時間'
+        reply = 'Usage: Input the number, and you will get the time to wait'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=reply))
