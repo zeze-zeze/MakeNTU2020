@@ -1,5 +1,5 @@
 from flask import Flask, request, abort
-from __main__ import APP
+from __main__ import APP, waiting_queue
 
 from linebot import (
     LineBotApi, WebhookHandler
