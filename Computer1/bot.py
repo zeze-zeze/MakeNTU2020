@@ -41,6 +41,8 @@ def handle_message(event):
         for wq in waiting_queue:
             print('hahaha\n\n')
             if res == wq['id']:
+                print(res)
+                print(wp['id'])
                 reply = 'Waiting Time: about {} minutes '.format(wq['wait'])
             else:
                 reply = 'No such number !'
