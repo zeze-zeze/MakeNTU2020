@@ -17,8 +17,10 @@ handler = WebhookHandler('fb0fa7acf8e727f01331ceafaca370e0')
 @APP.route("/test", methods=['GET'])
 def test():
     reply = ''
+    a = 1
     for wq in waiting_queue:
-        reply += str(wq)
+        if a != wq['id']:
+            reply += str(wq['id'])
     return reply
 
 @APP.route("/callback", methods=['POST'])
@@ -41,18 +43,18 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    try:
-        res = int(event.message.text)
-        for wq in waiting_queue:
-            print(res)
-            print(wq['id'])
-            if res == wq['id']:
-                reply = 'Waiting Time: about {} minutes '.format(wq['wait'])
-            else:
-                reply = 'No such number !'
+    #try:
+    res = int(event.message.text)
+    for wq in waiting_queue:
+        print(res)
+        print(wq['id'])
+        if res == wq['id']:
+            reply = 'Waiting Time: about {} minutes '.format(wq['wait'])
+        else:
+            reply = 'No such number !'
 
-    except:
-        reply = 'Usage: Input the number, and you will get the time to wait'
+    #except:
+    #    reply = 'Usage: Input the number, and you will get the time to wait'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=reply))
