@@ -14,8 +14,6 @@ except:
     print('no iot')
     pass
 
-from bot import *
-
 #
 # table: information of all tables in the restaurant
 #       id: the id of table
@@ -28,6 +26,8 @@ from bot import *
 table = [{'id': 0, 'finished': 70, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}, {'id': 1, 'finished': 40, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}]
 
 waiting_queue = [{'id': 1, 'wait': 0}, {'id': 2, 'wait': 0}, {'id': 3, 'wait': 1}, {'id': 4, 'wait': 0}, {'id': 5, 'wait': 0}]
+
+from bot import *
 
 @APP.route('/screen1')
 def screen1():
