@@ -82,5 +82,12 @@ def dequeue():
     waiting_queue.pop(0)
     return 'dequeue ok'
 
+@APP.route('/replyiot')
+def replyiot():
+    global table
+    args = request.args
+    id_ = int(args.get('id'))
+    return '{},{}'.format(id_, table[id_]['finished'])
+
 if __name__ == "__main__":
     APP.run(host = '0.0.0.0', port = 35000)

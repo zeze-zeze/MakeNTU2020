@@ -4,10 +4,14 @@ void setup() {
   pinMode(4, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(8, OUTPUT);
+  digitalWrite(2, HIGH);
+  digitalWrite(4, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(8, HIGH);
 }
 
 void loop() {
-  delay(1000);
+  /*delay(1000);
   if(Serial.available()){
     String line = Serial.readString();
     int id = line.substring(0, line.indexOf(",")).toInt();
@@ -32,8 +36,5 @@ void loop() {
         digitalWrite(6, LOW);
       }
     }
-    /*char cstr[16];
-    String(finished).toCharArray(cstr, 16);
-    Serial.write(cstr);*/
-  }
+  }*/
 }
