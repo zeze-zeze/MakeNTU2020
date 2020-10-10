@@ -26,6 +26,7 @@ except:
 table = [{'id': 0, 'finished': 0, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}, {'id': 1, 'finished': 0, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}]
 
 waiting_queue = [{'id': 1, 'wait': 0}, {'id': 2, 'wait': 0}, {'id': 3, 'wait': 1}, {'id': 4, 'wait': 0}, {'id': 5, 'wait': 0}]
+not_eat = 1
 
 from bot import *
 
@@ -49,7 +50,11 @@ def screen1():
 
 @APP.route('/screen2')
 def screen2():
-    return render_template('screen2.html', table = table)  
+    if eat:
+        red = ''
+    else:
+        red = '客人已經停止享用目前的餐點'
+    return render_template('screen2.html', table = table, red = red)
 
 @APP.route('/frompie')
 def frompie():
@@ -88,6 +93,11 @@ def replyiot():
     args = request.args
     id_ = int(args.get('id'))
     return '{},{}'.format(id_, table[id_]['finished'])
+
+@APP.route('/toolong')
+def toolong():
+    global eat
+    eat = int(args.get('eat'))
 
 if __name__ == "__main__":
     APP.run(host = '0.0.0.0', port = 35000)
