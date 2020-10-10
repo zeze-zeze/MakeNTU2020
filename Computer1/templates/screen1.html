@@ -18,5 +18,8 @@
         <li>號碼 {{wq['id']}} 號，預估等待時間 {{wq['wait']}} 分鐘</li>
         {% endfor %}
     </ul>
-    <img id="qrcode" src="/static/qrcode.PNG" />
+    <div id="qrcode">
+        <span>加入 linebot 追蹤等待時間</span>
+        <img src="/static/qrcode.PNG" />
+    </div>
 </body>
