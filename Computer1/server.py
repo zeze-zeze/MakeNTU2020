@@ -98,6 +98,7 @@ def replyiot():
 def toolong():
     global eat
     eat = int(request.args.get('eat'))
+    return eat
 
 if __name__ == "__main__":
     APP.run(host = '0.0.0.0', port = 35000)
