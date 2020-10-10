@@ -53,7 +53,7 @@ def screen2():
     if eat:
         red = ''
     else:
-        red = '客人已經停止享用目前的餐點'
+        red = 'Customers stop eating !!'
     return render_template('screen2.html', table = table, red = red)
 
 @APP.route('/frompie')
