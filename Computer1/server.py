@@ -26,7 +26,7 @@ except:
 table = [{'id': 0, 'finished': 0, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}, {'id': 1, 'finished': 0, 'dish': 0, 'time_left': 0, 'status': 0, 'order': 2}]
 
 waiting_queue = [{'id': 1, 'wait': 0}, {'id': 2, 'wait': 0}, {'id': 3, 'wait': 1}, {'id': 4, 'wait': 0}, {'id': 5, 'wait': 0}]
-not_eat = 1
+eat = 1
 
 from bot import *
 
