@@ -71,8 +71,8 @@ body {
 
 #eat {
     position: absolute;
-    left: 50%;
-    top: 50vh;
+    left: 40%;
+    top: 53vh;
     color:red;
     font-size: 30px;
 }
