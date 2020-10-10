@@ -22,4 +22,4 @@ class IOT():
 iot = IOT()
 while True:
     iot.req()
-    time.sleep(1000)
+    time.sleep(2)
