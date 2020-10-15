@@ -4,7 +4,7 @@ import time
 
 class IOT():
     def __init__(self):
-        COM_PORT = 'COM6'
+        COM_PORT = 'COM3'
         BAUD_RATES = '115200'
         self.ser = serial.Serial(COM_PORT, BAUD_RATES)
 

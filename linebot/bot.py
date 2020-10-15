@@ -11,8 +11,8 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-line_bot_api = LineBotApi('6WuAKKCDLKb+CUIF7W5eRnUgBnPb9vAlzmr3R+hnwBeYvJFnbdXAmeeum0tGyXFA4EzECHX0CroKGNbV1DxYfcH/jk3Aqu0WPC8tBztnF4wIjDlrm8+/3b156rBXy+tSP3G4DqMC7YWdoyPAgGKEAwdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('fb0fa7acf8e727f01331ceafaca370e0')
+line_bot_api = LineBotApi('XXXXXXXXXX')
+handler = WebhookHandler('XXXXXXXXXX')
 
 @APP.route("/test", methods=['GET'])
 def test():
